@@ -1,0 +1,198 @@
+body {
+    font-family: 'LaunchType-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.section-pad {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.container {
+    max-width: 810px;
+    margin: auto;
+}
+
+.intro {
+    background-image: url('images/intro.jpg');
+    color: #fff;
+}
+
+.intro p {
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 32px;
+    max-width: 112px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translate(0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.appear {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.marquee {
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    width: 100%;
+    /* each letter will be 5% of the viewport width (vw) */
+    font-size: 5vw;
+    line-height: 1;
+    /* this will stop long text from causing scroll bars by hanging outside of the marquee area */
+    overflow: hidden;
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-3000vw);
+    }
+}
+
+.marquee span {
+    animation: moveLeft 200s infinite;
+    /* this will ensure the text stays all on the same line */
+    white-space: nowrap;
+    transform: translateX();
+    /* span is inline by default, so here we tell to be block */
+    display: block;
+    /* position helps to add animation */
+    position: relative;
+}
+
+.mix-difference {
+    mix-blend-mode: difference;
+}
+
+.day-1 {
+    background-color: #FD76A7;
+}
+
+.day-2 {
+    background-color: #1BB190;
+}
+
+.day-3 {
+    background-image: url('./images/day-3.jpg');
+}
+
+.day {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0 30px 0;
+}
+
+.day .container {
+    position: relative;
+    z-index: 2;
+}
+
+.date {
+    font-size: 28px;
+    color: #FFEECF;
+    margin-bottom: 48px;
+    line-height: 1;
+}
+
+.lineup h2 {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.lineup p {
+    font-size: 21px;
+}
+
+.lineup li {
+    margin-bottom: 24px;
+    list-style-type: none;
+}
+
+.scroll-to {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+    width: 64px;
+    height: 32px;
+
+    background-image: url('./images/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateX(-50%);
+}
+
+.scroll-to-intro {
+    background-image: url('./images/down-arrow-light.svg');
+}
+
+@media (max-width: 640px) {
+    .marquee {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 90vw;
+        margin-bottom: 24px;
+    }
+
+    .logo {
+        max-width: 64px;
+        margin-bottom: 24px;
+    }
+
+    .intro p {
+        font-size: 20px;
+    }
+
+    .scroll-to {
+        display: none;
+    }
+
+    .lineup h2 {
+        font-size: 30px;
+    }
+}
